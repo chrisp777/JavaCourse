@@ -25,12 +25,15 @@ public class VectorMethods {
 	}
 	
 	double dotProduct (double x1 , double y1, double z1, double x2, double y2, double z2) {
+		//Function that returns the dot product of the arguments given
 		return (x1*x2 + y1*y2 + z1*z2);	
 	}
 	double magnitude (double x, double y, double z) {
+		//Function which gives the magnitude of the vector given through the arguments
 		return (Math.sqrt((x*x)+(y*y)+(z*z)));
 	}
 	double angle (double x1 , double y1, double z1, double x2, double y2, double z2) {
+		//Function that returns the angle between two vectors
 		return(Math.acos(dotProduct(x1,y1,z1,x2,y2,z2)/(magnitude(x1,y1,z1)*magnitude(x2,y2,z2))));
 	}
 	

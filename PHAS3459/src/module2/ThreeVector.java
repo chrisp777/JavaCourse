@@ -38,9 +38,32 @@ public class ThreeVector {
 		double product = vector1.x*vector2.x + vector1.y*vector2.y + vector1.z*vector2.z;
 		return product;
 	}
-	static ThreeVector VectorProduct(ThreeVector vector1, ThreeVector vector2) {
+	public double scalarProduct(ThreeVector arg) {
+		return scalarProduct(this, arg);
+	}
+	
+	static ThreeVector vectorProduct(ThreeVector vector1, ThreeVector vector2) {
 		ThreeVector product = new ThreeVector((vector1.y*vector2.z-vector2.y*vector1.z),-(vector1.x*vector2.z-vector2.x*vector1.z),(vector1.x*vector2.y-vector2.x*vector1.y));
 		return product;
 	}
+	public ThreeVector vectorProduct(ThreeVector arg) {
+		return vectorProduct(this, arg);
+	}
 	
+	static ThreeVector add(ThreeVector vector1, ThreeVector vector2) {
+		ThreeVector sum = new ThreeVector((vector1.x+vector2.x),(vector1.y+vector2.y),(vector1.z+vector2.z));
+		return sum;
+	}
+	public ThreeVector add(ThreeVector arg) {
+		return add(this, arg);
+	}
+	
+	static double angle(ThreeVector vector1, ThreeVector vector2) {
+		double angle = Math.acos((scalarProduct(vector1,vector2))/(vector1.magnitude()*vector2.magnitude()));
+		return angle;
+	}
+	public double angle(ThreeVector arg) {
+		return angle(this, arg);
+	}
+
 }

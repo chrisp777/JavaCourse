@@ -14,9 +14,9 @@ public class ThreeVector {
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		ThreeVector a = new ThreeVector(1,2,3);
-		System.out.println(a.magnitude());
+
 	}
+
 	
 	double magnitude() {
 		//Function which gives the magnitude of the vector given through the arguments

@@ -43,7 +43,7 @@ public class ThreeVector {
 	}
 	
 	static ThreeVector vectorProduct(ThreeVector vector1, ThreeVector vector2) {
-		ThreeVector product = new ThreeVector((vector1.y*vector2.z-vector2.y*vector1.z),-(vector1.x*vector2.z-vector2.x*vector1.z),(vector1.x*vector2.y-vector2.x*vector1.y));
+		ThreeVector product = new ThreeVector((vector1.y*vector2.z-vector2.y*vector1.z),(-vector1.x*vector2.z+vector2.x*vector1.z),(vector1.x*vector2.y-vector2.x*vector1.y));
 		return product;
 	}
 	public ThreeVector vectorProduct(ThreeVector arg) {

@@ -1,6 +1,9 @@
 package module2;
 
 public class Complex {
+	static final Complex ONE = new Complex(0,1);
+	static final Complex ZERO = new Complex(0,0);
+	static final Complex I = new Complex(1,0);
 	private double i;
 	private double r;
 	
@@ -31,8 +34,10 @@ public class Complex {
 	}
 	
 	Complex conjugate() {
-		this.i=-1*this.i;
-		return new Complex(this.i,this.r);
+		return new Complex(this.i*-1,this.r);
+	}
+	static public Complex conjugate(Complex arg) {
+		return arg.conjugate();
 	}
 	
 	Complex normalised() {
@@ -47,7 +52,7 @@ public class Complex {
 	}
 	
 	public String toString() {
-		String complex = "The real part is: "+r+" and the imaginary part is: "+i;
+		String complex = "("+r+" + "+i+"i) - The real part is: "+r+" and the imaginary part is: "+i;
 		return complex;
 	}
 	
@@ -67,13 +72,13 @@ public class Complex {
 		return result;
 	}
 	static public Complex multiplay(Complex c1, Complex c2) {
-		Complex result = new Complex(c1.r*c2.r+(-1)*(c1.i*c2.i),(c1.r*c2.i+c2.r*c1.i));
+		Complex result = new Complex((c1.r*c2.i+c2.r*c1.i),c1.r*c2.r+(-1)*(c1.i*c2.i));
 		return result;		
 	}
 	static public Complex divide(Complex c1, Complex c2) {
-		Complex denominator = multiplay(c2,c2.conjugate());
-		Complex numerator = multiplay(c1,c2.conjugate())
-		Complex result = new Complex();
+		Complex numerator = multiplay(c1,conjugate(c2));
+		double denominator = (c2.r*conjugate(c2).r)+((-1)*c2.i*conjugate(c2).i);
+		Complex result = new Complex(numerator.i/denominator,numerator.r/denominator);
 		return result;
 	}
 }

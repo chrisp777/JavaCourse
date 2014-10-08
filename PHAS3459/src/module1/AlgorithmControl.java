@@ -67,17 +67,18 @@ public class AlgorithmControl {
 				
 	}
 	
+	/* Takes a run time and how often an output is required 
+	 * The start time is recorded at the beginning and the end 
+	 * time is calculated and then the loop continues until the
+	 * current time matches or is larger tha the end time to allow
+	 * for the runtime to not exactally coincide with the if statement
+	 * Each time the remainder of the number of loops done, divided 
+	 * by the loopStep is 0 the number of loops is outputed to the user
+	 * the final number of loops is then printed out ot the user when the 
+	 * function is originaly called.
+	 */
 	int timer(long maxTime, int loopSteps) {
-		/* Takes a run time and how often an output is required 
-		 * The start time is recorded at the beginning and the end 
-		 * time is calculated and then the loop continues until the
-		 * current time matches or is larger tha the end time to allow
-		 * for the runtime to not exactally coincide with the if statement
-		 * Each time the remainder of the number of loops done, divided 
-		 * by the loopStep is 0 the number of loops is outputed to the user
-		 * the final number of loops is then printed out ot the user when the 
-		 * function is originaly called.
-		 */
+		
 		long startTime = System.currentTimeMillis();
 		long endTime = startTime + maxTime;
 		int numberLoops = 0;

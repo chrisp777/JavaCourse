@@ -12,7 +12,7 @@ public class FallingParticle {
 	private double t; // time
 	private double z; // vertical pos
 	private double v; // velocity (measured upwards)
-	private static double g = 9.81; // gravity
+	static final double g = 9.81; // gravity
 	
 	// Falling particle construct
 	public FallingParticle(double mass, double drag){

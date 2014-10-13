@@ -1,4 +1,4 @@
-package module2;
+package module3;
 
 public class Complex {
 	// Set up the constant variables for the complex identities
@@ -48,8 +48,10 @@ public class Complex {
 		return arg.conjugate();
 	}
 	
-	// Method that returns a normalised complex of te complex that was supplied
-	Complex normalised() {
+	// Method that returns a normalised complex of the complex that was supplied
+	Complex normalised() throws Exception {
+		//Throw an exception if the magnitude is zero ie the complex was zero
+		if(this.modulus()==0){throw new Exception("ERROR: Modulus of complex is zero.");}
 		return new Complex(this.i/modulus(),this.r/modulus());
 	}
 	
@@ -95,7 +97,11 @@ public class Complex {
 	}
 	
 	// Static method that divides two complex numbers ei c1 / c2
-	static public Complex divide(Complex c1, Complex c2) {
+	static public Complex divide(Complex c1, Complex c2) throws Exception {
+		// Throws an exception if the given argument is a zero complex 
+		if (c2.equals(ZERO)) {throw new Exception("ERROR: Cannot divide by zero.");}
+	
+		//Performed the divide
 		Complex numerator = multiplay(c1,conjugate(c2));
 		double denominator = (c2.r*conjugate(c2).r)+((-1)*c2.i*conjugate(c2).i);
 		Complex result = new Complex(numerator.i/denominator,numerator.r/denominator);

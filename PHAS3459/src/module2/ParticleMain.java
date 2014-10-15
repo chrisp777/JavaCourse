@@ -4,7 +4,6 @@ import module2.FallingParticle;
 public class ParticleMain {
 	// Main class to test the falling particle class.
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		// Make a new falling particle called ball with its mass and drag set
 		FallingParticle ball = new FallingParticle(5.3,2.1);
 		ball.setZ(10); // Drop tank depth/height.

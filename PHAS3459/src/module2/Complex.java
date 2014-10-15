@@ -35,7 +35,7 @@ public class Complex {
 	
 	// Method to calculate/return the angle of a complex number
 	double angle() {
-		return Math.atan2(this.i,this.r);
+		return Math.toDegrees(Math.atan2(this.i,this.r));
 	}
 	
 	// Method to calculate/return the complex conjugate of a complex number
@@ -89,14 +89,14 @@ public class Complex {
 	}
 	
 	// Static method that multiplies two complex numbers ei c1 * c2
-	static public Complex multiplay(Complex c1, Complex c2) {
+	static public Complex multiply(Complex c1, Complex c2) {
 		Complex result = new Complex((c1.r*c2.i+c2.r*c1.i),c1.r*c2.r+(-1)*(c1.i*c2.i));
 		return result;		
 	}
 	
-	// Static method that divides two complex numbers ei c1 / c2
+	// Static method that divides two complex numbers ie c1 / c2
 	static public Complex divide(Complex c1, Complex c2) {
-		Complex numerator = multiplay(c1,conjugate(c2));
+		Complex numerator = multiply(c1,conjugate(c2));
 		double denominator = (c2.r*conjugate(c2).r)+((-1)*c2.i*conjugate(c2).i);
 		Complex result = new Complex(numerator.i/denominator,numerator.r/denominator);
 		return result;

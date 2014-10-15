@@ -4,7 +4,7 @@ import module2.ThreeVector;
 public class TestThreeVector {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		// Set up all the vectors for testing
 		ThreeVector v1 = new ThreeVector(3,4,1);
 		ThreeVector v2 = new ThreeVector(5,3,2);
 		ThreeVector v3 = new ThreeVector(0,0,0);

@@ -15,8 +15,10 @@ public class FallingParticle {
 	
 	// Falling particle construct
 	public FallingParticle(double mass, double drag) throws Exception{
+		// Throws exception if the mass is negative
 		if (mass < 0) {throw new Exception("ERROR: Mass cannot be negative.");}
 		m = mass;
+		// Throws exception if the drag is negative
 		if (drag < 0) {throw new Exception("ERROR: Drag cannot be negative.");}
 		d = drag;
 	}
@@ -54,6 +56,8 @@ public class FallingParticle {
 	// Simulates the dropping of an object with mass and drag coefficient into a tank of viscous liquid,
 	// returns the time and velocity when the object hits the bottom of this vertical tank.
 	public void drop(double deltaT) throws Exception {
+		// Throw exception if a negative time interval is supplied.
+		if(deltaT<0) {throw new Exception("ERROR: Negative time interval was supplied.");}
 		t = 0; // reset drop timer
 		setV(0); // Initial drop speed 0
 		

@@ -9,7 +9,7 @@ public class Alphabet {
 		// Sets up the variable where the string will be built up
 		StringBuilder outputString = new StringBuilder();
 		int exception = 0; // Variable to count the exceptions
-		int runningTotal = 0; // Variable to coun the running int total
+		int runningTotal = 0; // Variable to count the running int total
 		
 		// For loop starting at 0 ad running until 1000 in steps of one
 		for (int i=0;i<=1000;i++){

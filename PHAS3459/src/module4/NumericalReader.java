@@ -10,7 +10,7 @@ public class NumericalReader {
 	private double sumOfValues;
 	private PrintWriter pw;
 	
-	// Change this variable to relocate the output file
+	// Change this variable to relocate the output file. NB the escape slashes
 	File outputfile = new File("N:\\Eclipse\\Files\\numbers.txt");
 
 	public static void main(String[] args) {
@@ -22,7 +22,9 @@ public class NumericalReader {
 		
 		// Try and form a URL object from a url (Not strictly nessecary as a correct url is supplied)
 		try {
+			// Two test URLs
 			url = new URL("http://www.hep.ucl.ac.uk/undergrad/3459/data/module4/module4_data1.txt");
+			//url = new URL("http://www.hep.ucl.ac.uk/undergrad/3459/data/module4/module4_data2.txt");
 		} 
 		catch (MalformedURLException e) {
 			// URL isn't in a valid format
@@ -33,14 +35,14 @@ public class NumericalReader {
 		try {
 			reader = brFromURL(url);
 			//BufferedReader reader = brFromFile("N:\\Eclipse\\Files\\numbers.txt");
-			nr.analysisStart(); // initialize minValue etc.
+			nr.analysisStart(); // Initialise minValue etc.
 			
 			// While there is lines left in the file, run the analysis
 			while ((line = reader.readLine()) != null) { 
-				nr.analyseData(line); // analyze lines, check for comments etc.
+				nr.analyseData(line); // Analyse lines, check for comments etc.
 			}
 		} 
-		// Catch all the IOExceptions that can arrise when reading and writing from and to the files.
+		// Catch all the IOExceptions that can arise when reading and writing from and to the files.
 		catch (IOException e) {
 			System.out.println("ERROR:"+e.getMessage());
 		}

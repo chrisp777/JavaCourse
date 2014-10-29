@@ -38,7 +38,7 @@ public class SquareMatrix {
 		}
 		return unit;	
 	}
-
+	
 	public boolean equals(Object obj) {
 		if (this == obj)
 			return true;
@@ -73,6 +73,11 @@ public class SquareMatrix {
 		}
 		return sum;		
 	}
+	public SquareMatrix add(SquareMatrix arg) throws Exception {
+		return add(this, arg);
+	}
+	
+	
 	
 	public static SquareMatrix subtract(SquareMatrix sm1, SquareMatrix sm2) throws Exception {
 		double[][] elements = new double[sm1.matrix.length][sm1.matrix.length];
@@ -83,6 +88,9 @@ public class SquareMatrix {
 			}
 		}
 		return sub;		
+	}
+	public SquareMatrix subtract(SquareMatrix arg) throws Exception {
+		return subtract(this,arg);
 	}
 	
 	public static SquareMatrix multiply(SquareMatrix sm1, SquareMatrix sm2) throws Exception {
@@ -98,5 +106,8 @@ public class SquareMatrix {
 			}
 		}
 		return product;		
+	}
+	public SquareMatrix multiply(SquareMatrix arg) throws Exception {
+		return multiply(this, arg);
 	}
 }

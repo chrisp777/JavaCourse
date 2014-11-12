@@ -2,8 +2,9 @@ package module6;
 
 import java.util.Collection;
 
+import module6.TestDataPoints.Point;
+
 public interface GoodnessOfFitCalculator {
-	public Theory bestTheory();
-	double goodnessOfFit(Collection<DataPoint> actual, Theory theory);
+	double goodnessOfFit(Collection<Point> actual, Theory theory);
 	
 }

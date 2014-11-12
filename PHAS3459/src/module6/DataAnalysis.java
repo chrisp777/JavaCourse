@@ -8,15 +8,14 @@ import module6.TestDataPoints.Point;
 public class DataAnalysis {
 	public static void main(String args[]) {
 		Collection<Point> data =  TestDataPoints.dataFromURL("http://www.hep.ucl.ac.uk/undergrad/3459/data/module6/module6-data.txt");
-		Theory theoryPow = new PowerLawTheory(2);
-		Theory theoryQuad = new QuadraticTheory(1,10,0);
 		GoodnessOfFitCalculator gofc = new ChiSquared();
 		ArrayList<Theory> theory = new ArrayList<Theory>();
 		
-		theory.add(theoryPow);
-		theory.add(theoryQuad);
+		theory.add(new PowerLawTheory(2));
+		theory.add(new PowerLawTheory(2.05));
+		theory.add(new QuadraticTheory(1,10,0));
 			
-		bestTheory(data, theory, gofc);
+		System.out.println(bestTheory(data, theory, gofc));
 	}
 	
     private static Theory bestTheory(Collection<Point> data, Collection<Theory> theories, GoodnessOfFitCalculator gofCalculator) {

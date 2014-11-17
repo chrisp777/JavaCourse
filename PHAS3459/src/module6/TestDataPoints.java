@@ -8,18 +8,22 @@ import module6.DataPoint;
 
 public class TestDataPoints {
 		
-		// Empty interface to allow us to use an ArrayList with both DataPoint and LabelledDataPoint (THESE IMPLEMENT POINT)
+		// Interface to allow us to use an ArrayList with both DataPoint and LabelledDataPoint (THESE IMPLEMENT POINT)
 		// This could also be achieved with a arrayList of Object type, however with the interface the code is more expendable
 		// I know this is the inheritance section not the Interface section but i believe this is the best solution.
 		public interface Point {
 			double getX();
 			double getY();
 			double getEy();
+			// Every Point member must have to a toString method so that they can be outputted to the user
+			String toString();
 		}
 	
 		public static void main(String[] args) {
+			// ArrayList that is populated with the data from the url
 			ArrayList<Point> data = new ArrayList<Point>(dataFromURL("http://www.hep.ucl.ac.uk/undergrad/3459/data/module6/module6-data.txt"));
 			for (Point dataPoint : data ) {
+				// Print out each dataPoint the to string method in the DataPoint object or the LabelledDataPoint handles the different inputs
 				System.out.println(dataPoint);				
 			}
 		}

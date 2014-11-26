@@ -8,9 +8,11 @@ import module6.DataPoint;
 
 public class TestDataPoints {
 		
-		// Interface to allow us to use an ArrayList with both DataPoint and LabelledDataPoint (THESE IMPLEMENT POINT)
-		// This could also be achieved with a arrayList of Object type, however with the interface the code is more expendable
-		// I know this is the inheritance section not the Interface section but i believe this is the best solution.
+		/*
+		** Interface to allow us to use an ArrayList with both DataPoint and LabelledDataPoint (THESE IMPLEMENT POINT)
+		** This could also be achieved with a arrayList of Object type, however with the interface the code is more expendable
+		** I know this is the inheritance section not the Interface section but i believe this is the best solution.
+		*/
 		public interface Point {
 			double getX();
 			double getY();

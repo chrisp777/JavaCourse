@@ -15,5 +15,7 @@ public interface SpaceStuff {
 	public Color getColor();
 	public SpaceStuff getParent();
 	public double getAngle();
+	public void setAngle(double angle);
+	public double getDelta();
 
 }

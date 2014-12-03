@@ -80,4 +80,18 @@ public class Star implements SpaceStuff{
 		// TODO Auto-generated method stub
 		return 0;
 	}
+
+
+	@Override
+	public void setAngle(double angle) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public double getDelta() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 }

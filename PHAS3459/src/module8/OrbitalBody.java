@@ -12,8 +12,9 @@ public class OrbitalBody implements SpaceStuff{
 	private int xPos;
 	private int yPos;
 	private double angle;
+	private double delta;
 	
-	public OrbitalBody(String name, int index, int height, int width, String type, Color color, int xPos, int yPos, double angle) {
+	public OrbitalBody(String name, int index, int height, int width, String type, Color color, int xPos, int yPos, double angle, double delta) {
 		this.name = name;
 		this.index = index;
 		this.height = height;
@@ -23,6 +24,7 @@ public class OrbitalBody implements SpaceStuff{
 		this.xPos = xPos;
 		this.yPos = yPos;
 		this.angle = angle;
+		this.delta = delta;
 	}
 	
 	public void setAngle(double angle) {
@@ -72,6 +74,9 @@ public class OrbitalBody implements SpaceStuff{
 		return color;
 	}
 
+	public double getDelta(){
+		return delta;
+	}
 
 	@Override
 	public SpaceStuff getParent() {

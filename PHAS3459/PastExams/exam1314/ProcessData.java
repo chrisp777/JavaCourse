@@ -56,6 +56,12 @@ public class ProcessData {
 		
 	}
 	
+	/**
+	 * Returns a list of animals that can only be found in the surveyData that is passed to the method.
+	 * 
+	 * @param surveyData	an ArrayList of animals that has been pre-filtered to only contain a subset of the whole survey data
+	 * @return 			 	a string[] list of animal speices found in the subset of survey data but not repeated in the whole survey data
+	 */	
 	public static ArrayList<String> findExclusive(ArrayList<Survey> surveyData) {
 		ArrayList<String> output = new ArrayList<>();
 				

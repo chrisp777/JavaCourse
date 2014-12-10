@@ -44,4 +44,13 @@ public class Survey {
 		return id+" "+latitude+" "+longitude+" "+height; 
 	}
 	
+	public boolean equals(Object other) {
+		boolean result = false;
+		if(other instanceof Survey){
+			Survey that = (Survey)other;
+			result = (this.id == that.id && this.latitude == that.latitude && this.longitude==that.longitude&&this.height==that.height);
+		}
+		return result;
+	}
+	
 }

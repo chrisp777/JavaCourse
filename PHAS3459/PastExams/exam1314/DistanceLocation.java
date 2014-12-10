@@ -20,7 +20,7 @@ public class DistanceLocation implements RegionSearch{
 		ArrayList<Survey> output = new ArrayList<>();
 		
 		for(Survey plant : survey){
-			double h = haversin(latitude-plant.getLatitude())+Math.cos(latitude)*Math.cos(plant.getLatitude())*haversin(longitude-plant.getLongitude());
+			double h = haversin(latitude-plant.getLatitude())+Math.cos(Math.toRadians(latitude))*Math.cos(Math.toRadians(plant.getLatitude()))*haversin(longitude-plant.getLongitude());
 			double d = 2*r*Math.asin(Math.sqrt(h));
 			if(d<distance){
 				output.add(plant);
@@ -29,6 +29,6 @@ public class DistanceLocation implements RegionSearch{
 		return output;
 	}
 	public double haversin(double angle) {
-		return (1-Math.cos(angle))/2;	
+		return (1-Math.cos(Math.toRadians(angle)))/2;	
 	}
 }

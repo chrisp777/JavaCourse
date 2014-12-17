@@ -1,8 +1,14 @@
 package module8;
 
 import java.awt.Color;
-
+/**
+ * OribitalBody is the object super class for anything in the solarSystem. Any functions or variables that are shared by all objects are outlined here.
+ * @author Chris
+ * @see SpaceStuff Planet Moon Star Comet
+ *
+ */
 public class OrbitalBody implements SpaceStuff{
+	// Initate all the variables that can be set by the constructor
 	private String name;
 	private int index;
 	private int height;
@@ -14,6 +20,7 @@ public class OrbitalBody implements SpaceStuff{
 	private double angle;
 	private double delta;
 	
+	// OrbitalBody contructor
 	public OrbitalBody(String name, int index, int height, int width, String type, Color color, int xPos, int yPos, double angle, double delta) {
 		this.name = name;
 		this.index = index;
@@ -27,6 +34,7 @@ public class OrbitalBody implements SpaceStuff{
 		this.delta = delta;
 	}
 	
+	// Setters and getters for all the vairables which are required at other points in the code
 	public void setAngle(double angle) {
 		this.angle = angle;
 	}
@@ -77,7 +85,8 @@ public class OrbitalBody implements SpaceStuff{
 	public double getDelta(){
 		return delta;
 	}
-
+	
+	// Required by the interface however not intrinsicly used as the star does not have a parent!
 	@Override
 	public SpaceStuff getParent() {
 		// TODO Auto-generated method stub

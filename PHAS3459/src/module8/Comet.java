@@ -1,7 +1,11 @@
 package module8;
 
 import java.awt.Color;
-
+/**
+ * Comet class extents the orbital body object with the variables added by the Comet. The constructor also sets the type variable.
+ * @author Chris
+ * @see OrbitalBody SpaceStuff
+ */
 public class Comet extends OrbitalBody {
 	private SpaceStuff parent;
 	

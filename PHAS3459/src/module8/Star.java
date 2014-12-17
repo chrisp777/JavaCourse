@@ -1,8 +1,15 @@
 package module8;
 
 import java.awt.Color;
-
+/**
+ * OribitalBody is the object  class for stars. Any functions or variables that are shared by all objects are outlined here. This is mostly a stub however the 
+ * functionality of more than one star in a system could be expanded too easier by including the structures here. NOTE this is not an OrbitalBody
+ * @author Chris
+ * @see SpaceStuff
+ *
+ */
 public class Star implements SpaceStuff{
+	// Initates the variables that will be set
 	private String name;
 	private int height;
 	private int width;
@@ -10,6 +17,7 @@ public class Star implements SpaceStuff{
 	private int xPos;
 	private int yPos;
 	
+	// Star Constructor
 	public Star(String name, int height, int width, Color color, int xPos, int yPos) {
 		this.name = name;
 		this.height = height;
@@ -19,7 +27,7 @@ public class Star implements SpaceStuff{
 		this.yPos= yPos;
 	}
 	
-	
+	// Setters and getters
 	public void setXPos(int xPos) {
 		this.xPos = xPos;
 	}
@@ -54,6 +62,9 @@ public class Star implements SpaceStuff{
 	}
 
 
+	// Below are all unused in this implementation as the star doesn't have settings for these variables.
+	// The simulation however could be extended to include multiple stars and then these variables could be
+	// used.
 	@Override
 	public int getIndex() {
 		// TODO Auto-generated method stub

@@ -2,6 +2,12 @@ package module8;
 
 import java.awt.Color;
 
+/**
+ * SpaceStuff is the interface for anything that needs to have its position calculated or its object drawn. 
+ * All the dependant functions are listed here so that the code can run.
+ * @author Chris
+ *
+ */
 public interface SpaceStuff {
 	public void setXPos(int xPos);	
 	public void setYPos(int yPos);	
